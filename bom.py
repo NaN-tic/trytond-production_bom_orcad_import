@@ -38,7 +38,6 @@ class BOM:
         'bom', 'Orcad Importation')
     orcad_file = fields.Binary('Orcad File')
 
-    # TODO: No poder clickar boto importacio si ja hi ha imputs
     @classmethod
     def __setup__(cls):
         super(BOM, cls).__setup__()
@@ -79,8 +78,6 @@ class BOM:
         pool = Pool()
         Orcad = pool.get('production.bom.orcad')
         Input = pool.get('production.bom.input')
-        UOM = pool.get('product.uom')
-        unit, = UOM.search([('id', '=', '1')])
 
         for record in records:
             orcads = Orcad.search([('bom', '=', record.id)])
@@ -93,18 +90,16 @@ class BOM:
                     new_input.bom = record
                     new_input.product = orcad.product
                     new_input.quantity = orcad.quantity
-                    new_input.uom = unit
+                    new_input.uom = orcad.product.default_uom
                     new_input.map_distribution = orcad.reference
                     to_create.append(new_input)
             Input.create([x._save_values for x in to_create])
-
 
     def load_values(self, values, result):
         pool = Pool()
         Orcad = pool.get('production.bom.orcad')
 
         to_create = []
-        print "Loading values"
         for (quantity, part_reference, description,
              part_number, product) in values:
 
