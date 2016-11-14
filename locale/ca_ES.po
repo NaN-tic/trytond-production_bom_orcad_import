@@ -1,0 +1,59 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:production.bom:"
+msgid "Incorrect file definition"
+msgstr "Arxiu incorrecte"
+
+msgctxt "error:production.bom:"
+msgid "No input file detected"
+msgstr "No s'ha detectat cap arxiu"
+
+msgctxt "error:production.bom:"
+msgid "Some products were not found"
+msgstr "Alguns productes no s'han pogut trobat"
+
+msgctxt "error:production.bom:"
+msgid "One or more entries do not have prodcuts"
+msgstr "Una o més entrades no tenen producte"
+
+msgctxt "field:production.bom.orcad,product:"
+msgid "Product"
+msgstr "Producte"
+
+msgctxt "field:production.bom.orcad,quantity:"
+msgid "Quantity"
+msgstr "Quantitat"
+
+msgctxt "field:production.bom.orcad,reference:"
+msgid "Reference"
+msgstr "Referencia"
+
+msgctxt "field:production.bom.orcad,description:"
+msgid "Description"
+msgstr "Descripció"
+
+msgctxt "field:production.bom.orcad,part_number:"
+msgid "Part number"
+msgstr "Número de la part"
+
+msgctxt "field:production.bom,orcad_lines:"
+msgid "Orcad Importation"
+msgstr "Importació d'Orcad"
+
+msgctxt "field:production.bom,orcad_file:"
+msgid "Orcad File"
+msgstr "Arxiu Orcad"
+
+msgctxt "view:production.bom:"
+msgid "Process file"
+msgstr "Processa arxiu"
+
+msgctxt "view:production.bom:"
+msgid "Create Inputs"
+msgstr "Crea entrades"
+
+msgctxt "view:production.bom:"
+msgid "Import Orcad"
+msgstr "Importació d'Orcad"

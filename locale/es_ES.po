@@ -1,0 +1,47 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:production.bom:"
+msgid "Incorrect file definition"
+msgstr "Archivo incorrecto"
+
+msgctxt "error:production.bom:"
+msgid "No input file detected"
+msgstr "No se ha detectado ningun archivo"
+
+msgctxt "error:production.bom:"
+msgid "Some products were not found"
+msgstr "Algunos productos no se han encontrado"
+
+msgctxt "error:production.bom:"
+msgid "One or more entries do not have prodcuts"
+msgstr "Una o más entradas no tienen producto"
+
+msgctxt "field:production.bom.orcad,product:"
+msgid "Product"
+msgstr "Producto"
+
+msgctxt "field:production.bom.orcad,quantity:"
+msgid "Quantity"
+msgstr "Cantidad"
+
+msgctxt "field:production.bom.orcad,reference:"
+msgid "Reference"
+msgstr "Referencia"
+
+msgctxt "field:production.bom.orcad,description:"
+msgid "Description"
+msgstr "Descripción"
+
+msgctxt "field:production.bom.orcad,part_number:"
+msgid "Part number"
+msgstr "Número de la parte"
+
+msgctxt "field:production.bom,orcad_lines:"
+msgid "Orcad Importation"
+msgstr "Importación de Orcad"
+
+msgctxt "field:production.bom.orcad,orcad_file:"
+msgid "Orcad File"
+msgstr "Archivo Orcad"

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>       
+        <record model="ir.ui.view" id="bom_view_form">
+            <field name="model">production.bom</field>
+            <field name="type">form</field>
+            <field name="name">bom_form</field>
+            <field name="inherit" ref="production.bom_view_form"/>
+        </record>
+        <record	model="ir.ui.view" id="bom_import_view_list">
+        	<field name="model">production.bom.orcad</field>
+        	<field name="type">tree</field>
+        	<field name="name">bom_import_tree</field>
+        </record>
+    </data>
+</tryton>
