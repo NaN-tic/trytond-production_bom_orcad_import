@@ -42,6 +42,18 @@ msgctxt "field:production.bom,orcad_lines:"
 msgid "Orcad Importation"
 msgstr "Importación de Orcad"
 
-msgctxt "field:production.bom.orcad,orcad_file:"
+msgctxt "field:production.bom,orcad_file:"
 msgid "Orcad File"
-msgstr "Archivo Orcad"
+msgstr "Arxiu Orcad"
+
+msgctxt "view:production.bom:"
+msgid "Process file"
+msgstr "Procesar archivo"
+
+msgctxt "view:production.bom:"
+msgid "Create Inputs"
+msgstr "Crear entradas"
+
+msgctxt "view:production.bom:"
+msgid "Import Orcad"
+msgstr "Importación de Orcad"
