@@ -24,7 +24,7 @@ class ProductionBomOrcad(ModelSQL, ModelView):
     quantity = fields.Char('Quantity', readonly=True, required=True)
     reference = fields.Char('Reference', readonly=True, required=True)
     description = fields.Char('Description', readonly=True, required=True)
-    part_number = fields.Char('Part number', readonly=True, required=True)
+    part_number = fields.Char('Part number')
 
     @classmethod
     def __setup__(cls):
@@ -36,7 +36,8 @@ class BOM:
 
     orcad_lines = fields.One2Many('production.bom.orcad',
         'bom', 'Orcad Importation')
-    orcad_file = fields.Binary('Orcad File')
+    orcad_file = fields.Binary('Orcad File', filename='filename')
+    filename = fields.Char('Filename', readonly=True)
 
     @classmethod
     def __setup__(cls):

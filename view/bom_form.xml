@@ -3,13 +3,13 @@
 this repository contains the full copyright notices and license terms. -->
 <data>
     <xpath expr="/form/notebook/page[@id='lines']" position="after">
-        <page string="Import Orcad" id="import_orcad" col="4">
-            <label name="orcad_file" colspan="1"/>
+        <page string="Import Orcad" id="import_orcad" col="6">
+            <field name="filename" colspan="1"/>
             <field name="orcad_file" colspan="1"/>
-            <button string="Process file" name="process_orcad_file"/>
-            <button string="Create Inputs" name="create_inputs"/>
+            <button string="Process file" name="process_orcad_file" colspan="2"/>
+            <button string="Create Inputs" name="create_inputs" colspan="2"/>
             	<newline/>
-            <field name="orcad_lines" colspan="4"/>
+            <field name="orcad_lines" colspan="6"/>
         </page>
     </xpath>
 </data>
