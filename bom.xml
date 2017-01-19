@@ -9,7 +9,7 @@
             <field name="name">bom_form</field>
             <field name="inherit" ref="production.bom_view_form"/>
         </record>
-        <record	model="ir.ui.view" id="bom_import_view_list">
+        <record model="ir.ui.view" id="bom_import_view_list">
         	<field name="model">production.bom.orcad</field>
         	<field name="type">tree</field>
         	<field name="name">bom_import_tree</field>
