@@ -1,12 +1,11 @@
 <?xml version="1.0"?>
 <!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
 this repository contains the full copyright notices and license terms. -->
-
 <tree string="Ocrad Imports">
-	<field name="quantity"/>
-	<field name="reference"/>
-	<field name="description"/>
-	<field name="part_number"/>
-	<field name="product"/>
-	<field name="bom"/>
+    <field name="quantity"/>
+    <field name="reference"/>
+    <field name="description"/>
+    <field name="part_number"/>
+    <field name="product"/>
+    <field name="bom"/>
 </tree>

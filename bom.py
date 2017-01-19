@@ -10,7 +10,6 @@ from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond import backend
 
 __all__ = ['ProductionBomOrcad', 'BOM']
-__metaclass__ = PoolMeta
 
 
 class ProductionBomOrcad(ModelSQL, ModelView):
@@ -32,6 +31,7 @@ class ProductionBomOrcad(ModelSQL, ModelView):
 
 
 class BOM:
+    __metaclass__ = PoolMeta
     __name__ = 'production.bom'
 
     orcad_lines = fields.One2Many('production.bom.orcad',

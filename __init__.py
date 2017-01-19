@@ -1,11 +1,11 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from trytond.pool import Pool
-from .bom import *
+from . import bom
 
 
 def register():
     Pool.register(
-        BOM,
-        ProductionBomOrcad,
+        bom.BOM,
+        bom.ProductionBomOrcad,
         module='production_bom_orcad_import', type_='model')
