@@ -8,6 +8,7 @@ from trytond.pyson import PYSONEncoder, Bool, Eval, If
 from trytond.pool import Pool, PoolMeta
 from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond import backend
+import codecs
 
 __all__ = ['ProductionBomOrcad', 'BOM']
 
@@ -21,7 +22,7 @@ class ProductionBomOrcad(ModelSQL, ModelView):
         ondelete='CASCADE')
     product = fields.Many2One('product.product', 'Product')
     quantity = fields.Char('Quantity', readonly=True, required=True)
-    reference = fields.Char('Reference', readonly=True, required=True)
+    reference = fields.Char('Reference')
     description = fields.Char('Description', readonly=True, required=True)
     part_number = fields.Char('Part number')
 
@@ -37,7 +38,7 @@ class BOM:
     orcad_lines = fields.One2Many('production.bom.orcad',
         'bom', 'Orcad Importation')
     orcad_file = fields.Binary('Orcad File', filename='filename')
-    filename = fields.Char('Filename', readonly=True)
+    filename = fields.Char('Filename')
 
     @classmethod
     def __setup__(cls):
@@ -101,15 +102,17 @@ class BOM:
         Orcad = pool.get('production.bom.orcad')
 
         to_create = []
+
         for (quantity, part_reference, description,
              part_number, product) in values:
 
             orcad = Orcad()
             orcad.bom = self
-            orcad.quantity = quantity
-            orcad.reference = part_reference
-            orcad.description = description
-            orcad.part_number = part_number
+            orcad.quantity = quantity.decode(
+                encoding='latin1').replace(',', '.')
+            orcad.reference = part_reference.decode(encoding='latin1')
+            orcad.description = description.decode(encoding='latin1')
+            orcad.part_number = part_number.decode(encoding='latin1')
             if product:
                 orcad.product, = product
 
