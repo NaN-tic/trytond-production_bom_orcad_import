@@ -13,5 +13,16 @@
         	<field name="type">tree</field>
         	<field name="name">bom_import_tree</field>
         </record>
+        <record model="ir.model.button" id="bom_orcad_import_create_inputs_button">
+            <field name="name">create_inputs</field>
+            <field name="string">Create Inputs</field>
+            <field name="model" search="[('model', '=', 'production.bom')]"/>
+        </record>
+        <record model="ir.model.button" id="bom_orcad_import_process_orcad_file_button">
+            <field name="name">process_orcad_file</field>
+            <field name="string">Process Orcad File</field>
+            <field name="model" search="[('model', '=', 'production.bom')]"/>
+        </record>
+
     </data>
 </tryton>
