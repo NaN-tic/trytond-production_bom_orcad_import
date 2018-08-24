@@ -30,8 +30,7 @@ class ProductionBomOrcad(ModelSQL, ModelView):
         super(ProductionBomOrcad, cls).__setup__()
 
 
-class BOM:
-    __metaclass__ = PoolMeta
+class BOM(metaclass=PoolMeta):
     __name__ = 'production.bom'
 
     orcad_lines = fields.One2Many('production.bom.orcad',
