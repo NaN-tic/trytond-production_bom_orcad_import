@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!-- This file is part of Tryton.  The COPYRIGHT file at the top level of
+this repository contains the full copyright notices and license terms. -->
+<tryton>
+    <data group="1">
+    <record model="ir.message" id="incorrect_file">
+        <field name="text">Incorrect file definition.</field>
+    </record>
+    <record model="ir.message" id="no_file">
+        <field name="text">No input file detected.</field>
+    </record>
+    <record model="ir.message" id="products_not_found">
+        <field name="text">Some products were not found.</field>
+    </record>
+    <record model="ir.message" id="no_product">
+        <field name="text">One or more entries do not have prodcuts.</field>
+    </record>
+    </data>
+</tryton>

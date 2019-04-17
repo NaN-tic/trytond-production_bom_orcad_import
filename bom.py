@@ -8,6 +8,9 @@ from trytond.pool import Pool, PoolMeta
 from trytond.wizard import Wizard, StateView, StateTransition, Button
 from trytond import backend
 import codecs
+from trytond.i18n import gettext
+from trytond.exceptions import UserError, UserWarning
+
 
 __all__ = ['ProductionBomOrcad', 'BOM']
 
@@ -50,26 +53,23 @@ class BOM(metaclass=PoolMeta):
                         | Eval('state'))
                     },
                 })
-        cls._error_messages.update({
-            'incorrect_file': ('Incorrect file definition'),
-            'no_file': ('No input file detected'),
-            'products_not_found': ('Some products were not found'),
-            'no_product': ('One or more entries do not have prodcuts'),
-        })
 
     @classmethod
     @ModelView.button
     def process_orcad_file(cls, records):
         for record in records:
             if not record.orcad_file:
-                cls.raise_user_error('no_file')
+                raise UserError(gettext(
+                    'production_bom_orcad_import.no_file'))
             values, res = record.search_products()
             # No values, incorrect file
             # res = False, some products nor found: values = products not found
             if not values:
-                cls.raise_user_error('incorrect_file')
+                raise UserError(gettext(
+                    'production_bom_orcad_import.incorrect_file'))
             elif not res:
-                record.raise_user_warning('product_not_found', 'no_product')
+                raise UserWarning('product_not_found_%s'%record.id,
+                    gettext('production_bom_orcad_import.no_product'))
             record.load_values(values, res)
 
     @classmethod
@@ -84,7 +84,8 @@ class BOM(metaclass=PoolMeta):
             to_create = []
             for orcad in orcads:
                 if not orcad.product:
-                    cls.raise_user_error('no_product')
+                    raise UserError(gettext(
+                        'production_bom_orcad_import.no_product'))
                 else:
                     new_input = Input()
                     new_input.bom = record
