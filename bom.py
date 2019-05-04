@@ -57,6 +57,7 @@ class BOM(metaclass=PoolMeta):
     @classmethod
     @ModelView.button
     def process_orcad_file(cls, records):
+        Warning = Pool().get('res.user.warning')
         for record in records:
             if not record.orcad_file:
                 raise UserError(gettext(
@@ -68,8 +69,10 @@ class BOM(metaclass=PoolMeta):
                 raise UserError(gettext(
                     'production_bom_orcad_import.incorrect_file'))
             elif not res:
-                raise UserWarning('product_not_found_%s'%record.id,
-                    gettext('production_bom_orcad_import.no_product'))
+                key = 'product_not_found_%s'%record.id
+                if Warning.check(key):
+                    raise UserWarning(key, gettext(
+                        'production_bom_orcad_import.no_product'))
             record.load_values(values, res)
 
     @classmethod
