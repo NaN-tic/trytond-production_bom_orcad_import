@@ -20,7 +20,7 @@
         </record>
         <record model="ir.model.button" id="bom_orcad_import_process_orcad_file_button">
             <field name="name">process_orcad_file</field>
-            <field name="string">Process Orcad File</field>
+            <field name="string">Process file</field>
             <field name="model" search="[('model', '=', 'production.bom')]"/>
         </record>
 

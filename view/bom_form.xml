@@ -6,11 +6,10 @@ this repository contains the full copyright notices and license terms. -->
         <page string="Import Orcad" id="import_orcad" col="6">
             <field name="filename" colspan="1"/>
             <field name="orcad_file" colspan="1"/>
-            <button string="Process file" name="process_orcad_file" colspan="2"/>
-            <button string="Create Inputs" name="create_inputs" colspan="2"/>
+            <button name="process_orcad_file" colspan="2"/>
+            <button name="create_inputs" colspan="2"/>
             	<newline/>
             <field name="orcad_lines" colspan="6"/>
         </page>
     </xpath>
 </data>
-
