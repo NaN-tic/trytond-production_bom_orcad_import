@@ -1,16 +1,10 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
 from trytond.model import ModelView, ModelSQL, fields
-from trytond.wizard import Wizard, StateView, Button, StateAction
-from trytond.transaction import Transaction
-from trytond.pyson import PYSONEncoder, Bool, Eval, If
+from trytond.pyson import Eval
 from trytond.pool import Pool, PoolMeta
-from trytond.wizard import Wizard, StateView, StateTransition, Button
-from trytond import backend
-import codecs
 from trytond.i18n import gettext
 from trytond.exceptions import UserError, UserWarning
-
 
 __all__ = ['ProductionBomOrcad', 'BOM']
 
